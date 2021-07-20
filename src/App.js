@@ -1,8 +1,13 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom'
-import { Header, Footer } from './components/common';
+import Header from './components/common/Header';
+import Footer from './components/common/Footer';
 
-import { Home, Shop, About, Contact } from './components/common';
+import Home from './components/common/Home';
+import Shop from './components/common/Shop';
+import About from './components/common/About';
+import Contact from './components/common/Contact';
+
 import './App.css';
 
 function App() {

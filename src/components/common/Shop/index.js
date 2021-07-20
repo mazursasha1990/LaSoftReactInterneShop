@@ -4,7 +4,7 @@ import { Container, Typography, Grid, CardMedia, Card, CardContent, CardActions 
 import Button from '@material-ui/core/Button';
 import ImagesData from "../../../imagesData/images";
 import { makeStyles } from '@material-ui/core/styles';
-import './Shop.css';
+import './index.css';
 
 const useStyles = makeStyles((theme) => ({
     root: {

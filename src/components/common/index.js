@@ -1,10 +1,10 @@
-import Header from "./header";
-import Navbar from "./navbar";
-import Footer from "./footer";
-import Home from "./home";
-import Shop from "./shop";
-import About from "./about"
-import Contact from "./contact";
+import Header from "./Header";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+import Home from "./Home";
+import Shop from "./Shop";
+import About from "./About"
+import Contact from "./Contact";
 
 export {
     Header,

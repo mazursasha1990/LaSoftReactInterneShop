@@ -1,7 +1,7 @@
 import React from 'react';
-import { Navbar } from '../../common';
+import { Navbar } from '..';
 
-import './Header.css'
+import './index.css'
 
 
 function Header() {
