@@ -1,0 +1,12 @@
+.mainHome {
+    font-family: RobotoThin;
+
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+.main-banner {
+    margin: 20px;
+}
