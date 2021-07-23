@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navbar } from '..';
 
-import './index.css'
+import './index.scss'
 
 
 function Header() {

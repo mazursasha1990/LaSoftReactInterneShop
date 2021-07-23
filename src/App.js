@@ -8,7 +8,7 @@ import Shop from './components/common/Shop';
 import About from './components/common/About';
 import Contact from './components/common/Contact';
 
-import './App.css';
+import './App.scss';
 
 function App() {
   return (

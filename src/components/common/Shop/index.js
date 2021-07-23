@@ -2,9 +2,9 @@ import React from 'react';
 
 import { Container, Typography, Grid, CardMedia, Card, CardContent, CardActions } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
-import ImagesData from "../../../imagesData/images";
+import ImagesData from "../../../assets/imagesData/images";
 import { makeStyles } from '@material-ui/core/styles';
-import './index.css';
+import './index.scss';
 
 const useStyles = makeStyles((theme) => ({
     root: {

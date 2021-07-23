@@ -1,13 +1,13 @@
 import React from 'react';
 
-import './index.css';
+import './index.scss';
 import ImageList from '@material-ui/core/ImageList';
 import ImageListItem from '@material-ui/core/ImageListItem';
 import ImageListItemBar from '@material-ui/core/ImageListItemBar';
 import IconButton from '@material-ui/core/IconButton';
 import { Container, Typography, Paper, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import ImagesData from "../../../imagesData/images";
+import ImagesData from "../../../assets/imagesData/images";
 
 import Button from '@material-ui/core/Button';
 
