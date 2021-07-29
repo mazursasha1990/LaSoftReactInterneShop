@@ -4,6 +4,7 @@ import { Container, Typography, Grid, CardMedia, Card, CardContent, CardActions 
 import Button from '@material-ui/core/Button';
 import ImagesData from "../../../assets/imagesData/images";
 import { makeStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
 import './index.scss';
 
 const useStyles = makeStyles((theme) => ({
@@ -21,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
 
 function Shop() {
 
@@ -33,32 +34,34 @@ function Shop() {
                 <Grid container spacing={4}>
                     {ImagesData.map((card) => (
                         <Grid item key={card} xs={12} sn={6} md={4}>
-                            <Card className={classes.card}>
-                                <CardMedia
-                                    className={classes.cardMedia}
-                                    image={card.url}
-                                    title={card.id}
-                                    price={card.price}
-                                />
-                                <CardContent className={classes.cardContent}>
-                                    <Typography variant="h5" gutterBottom>
-                                        <p>{card.id}</p>
-                                    </Typography>
-                                    <Typography>
-                                        Product description.
-                                    </Typography>
-                                    <Typography>
-                                        <p className={classes.title}>Price:{card.price}$</p>
-                                    </Typography>
-                                </CardContent>
-                                <CardActions>
+                            <Link to={`/product/${card.id}`}>
+                                <Card className={classes.card}>
+                                    <CardMedia
+                                        className={classes.cardMedia}
+                                        image={card.url}
+                                        title={card.id}
+                                        price={card.price}
+                                    />
+                                    <CardContent className={classes.cardContent}>
+                                        <Typography variant="h5" gutterBottom>
+                                            <p>{card.id}</p>
+                                        </Typography>
+                                        <Typography>
+                                            Product description.
+                                        </Typography>
+                                        <Typography>
+                                            <p className={classes.title}>Price:{card.price}$</p>
+                                        </Typography>
+                                    </CardContent>
+                                    <CardActions>
 
-                                    <Button size="medium" color="secondary">
-                                        Buy it
-                                    </Button>
+                                        <Button size="medium" color="secondary">
+                                            Buy it
+                                        </Button>
 
-                                </CardActions>
-                            </Card>
+                                    </CardActions>
+                                </Card>
+                            </Link>
                         </Grid>
                     ))}
                 </Grid>

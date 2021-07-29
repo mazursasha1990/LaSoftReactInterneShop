@@ -5,6 +5,8 @@ import Home from "./Home";
 import Shop from "./Shop";
 import About from "./About"
 import Contact from "./Contact";
+import ProductPage from "./ProductPage";
+import PageNotFound from "./PageNotFound";
 
 export {
     Header,
@@ -14,4 +16,6 @@ export {
     Shop,
     About,
     Contact,
+    ProductPage,
+    PageNotFound,
 }

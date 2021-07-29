@@ -7,6 +7,8 @@ import Home from './components/common/Home';
 import Shop from './components/common/Shop';
 import About from './components/common/About';
 import Contact from './components/common/Contact';
+import PageNotFound from './components/common/PageNotFound';
+import ProductPage from './components/common/ProductPage';
 
 import './App.scss';
 
@@ -20,6 +22,8 @@ function App() {
         <Route path="/shop" component={Shop} />
         <Route path="/about" component={About} />
         <Route path="/contact" component={Contact} />
+        <Route path="/product/:id" component={ProductPage} />
+        <Route component={PageNotFound} />
       </Switch>
 
 
