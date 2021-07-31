@@ -1,4 +1,6 @@
-const ImagesData = [
+
+
+const ProductsData = [
     {
         id: 1,
         url: 'https://picsum.photos/id/1/200/300',
@@ -102,4 +104,4 @@ const ImagesData = [
 
 ]
 
-export default ImagesData;
+export default ProductsData;

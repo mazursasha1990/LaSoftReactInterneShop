@@ -1,15 +1,18 @@
 import React from 'react';
 
-import './index.css';
+import './index.scss';
 import ImageList from '@material-ui/core/ImageList';
 import ImageListItem from '@material-ui/core/ImageListItem';
 import ImageListItemBar from '@material-ui/core/ImageListItemBar';
 import IconButton from '@material-ui/core/IconButton';
 import { Container, Typography, Paper, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import ImagesData from "../../../imagesData/images";
+import ProductsData from "../../../assets/productsData/products";
+
+import { Link } from 'react-router-dom';
 
 import Button from '@material-ui/core/Button';
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -25,16 +28,16 @@ const useStyles = makeStyles((theme) => ({
         marginRight: theme.spacing(1)
     },
     title: {
-        flexGrow: 1
+        flexGrow: 1,
+        color: theme.palette.primary.light,
     },
     imageList: {
         flexWrap: 'nowrap',
         transform: 'translateZ(0)',
 
     },
-    title: {
-        color: theme.palette.primary.light,
-    },
+
+
     titleBar: {
         background:
             'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
@@ -43,6 +46,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Home() {
     const classes = useStyles();
+
     return (
         <main className="mainHome">
             <div className="main-banner">
@@ -79,25 +83,31 @@ function Home() {
                 </Paper>
             </div>
             <div className={classes.root}>
-                <ImageList className={classes.imageList} cols={2.5}>
-                    {ImagesData.map((item) => (
+
+                <ImageList className={classes.imageList} cols={5.5}>
+                    {ProductsData.map((item) => (
+
                         <ImageListItem key={item.url}>
                             <img src={item.url} alt={item.id} />
-                            <ImageListItemBar
-                                title={item.id}
-                                classes={{
-                                    root: classes.titleBar,
-                                    title: classes.title,
-                                }}
-                                actionIcon={
-                                    <IconButton aria-label={`star ${item.price}`}>
-                                        <p className={classes.title}>{item.price}$</p>
-                                    </IconButton>
-                                }
-                            />
+                            <Link to={`/product/${item.id}`}>
+                                <ImageListItemBar
+                                    title={item.id}
+                                    classes={{
+                                        root: classes.titleBar,
+                                        title: classes.title,
+                                    }}
+                                    actionIcon={
+                                        <IconButton aria-label={`star ${item.price}`}>
+                                            <p className={classes.title}>{item.price}$</p>
+                                        </IconButton>
+                                    }
+                                />
+                            </Link>
                         </ImageListItem>
+
                     ))}
                 </ImageList>
+
             </div>
         </main >
     )

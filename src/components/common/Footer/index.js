@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './index.css';
+import './index.scss';
 import { Typography, BottomNavigation, BottomNavigationAction } from '@material-ui/core';
 
 import FacebookIcon from '@material-ui/icons/Facebook';
