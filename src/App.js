@@ -10,9 +10,12 @@ import Contact from './components/common/Contact';
 import PageNotFound from './components/common/PageNotFound';
 import ProductPage from './components/common/ProductPage';
 
+import ProductsData from './assets/productsData/products'
+
 import './App.scss';
 
 function App() {
+
   return (
     <div className="App">
       <Header />

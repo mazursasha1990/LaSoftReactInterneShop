@@ -1,19 +1,30 @@
 
+
 import React from 'react';
-import { useHistory, useParams } from 'react-router-dom'
-import { Link } from 'react-router-dom';
+
+import ProductsData from '../../../assets/productsData/products';
 
 import './index.scss';
 
 
-function ProductPage() {
-    const { id } = useParams()
+const ProductPage = ({ match }) => {
+    const {
+        params: { id }
+    } = match;
+
 
     return (
         <div>
-            Product Page
+            <p>
+                <strong>Product ID: {id}</strong>
+            </p>
+            <img src={ProductsData[id - 1].url} alt={id} />
+            <p>
+                <strong>Product price: {ProductsData[id - 1].price} $</strong>
+            </p>
         </div>
-    );
-};
+    )
+}
+
 
 export default ProductPage;

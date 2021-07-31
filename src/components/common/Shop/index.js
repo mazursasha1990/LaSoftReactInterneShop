@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Container, Typography, Grid, CardMedia, Card, CardContent, CardActions } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
-import ImagesData from "../../../assets/imagesData/images";
+import ProductsData from "../../../assets/productsData/products";
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import './index.scss';
@@ -32,7 +32,7 @@ function Shop() {
         <main className="mainShop">
             <Container className={classes.cardGrid} maxWidth="md">
                 <Grid container spacing={4}>
-                    {ImagesData.map((card) => (
+                    {ProductsData.map((card) => (
                         <Grid item key={card} xs={12} sn={6} md={4}>
                             <Link to={`/product/${card.id}`}>
                                 <Card className={classes.card}>
