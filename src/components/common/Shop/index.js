@@ -2,10 +2,12 @@ import React from 'react';
 
 import { Container, Typography, Grid, CardMedia, Card, CardContent, CardActions } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
-import ProductsData from "../../../assets/productsData/products";
+//import ProductsData from "../../../assets/productsData/products";
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import './index.scss';
+
+import { useSelector } from 'react-redux';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -24,33 +26,39 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-function Shop() {
-
+export const PostsList = () => {
+    const posts = useSelector((state) => {
+        console.log(state)
+        return state.posts
+    });
     const classes = useStyles();
 
-    return (
-        <main className="mainShop">
-            <Container className={classes.cardGrid} maxWidth="md">
-                <Grid container spacing={4}>
-                    {ProductsData.map((card) => (
-                        <Grid item key={card} xs={12} sn={6} md={4}>
-                            <Link to={`/product/${card.id}`}>
+    const renderedPosts = posts.map((post) => {
+
+
+        return (
+            <main className="mainShop">
+                <Container className={classes.cardGrid} maxWidth="md">
+                    <Grid container spacing={4}>
+
+                        <Grid item key={post} xs={12} sn={6} md={4}>
+                            <Link to={`/product/${post.id}`}>
                                 <Card className={classes.card}>
                                     <CardMedia
                                         className={classes.cardMedia}
-                                        image={card.url}
-                                        title={card.id}
-                                        price={card.price}
+                                        image={post.url}
+                                        title={post.id}
+                                        price={post.price}
                                     />
                                     <CardContent className={classes.cardContent}>
                                         <Typography variant="h5" gutterBottom>
-                                            <p>{card.id}</p>
+                                            <p>{post.id}</p>
                                         </Typography>
                                         <Typography>
                                             Product description.
                                         </Typography>
                                         <Typography>
-                                            <p className={classes.title}>Price:{card.price}$</p>
+                                            <p className={classes.title}>Price:{post.price}$</p>
                                         </Typography>
                                     </CardContent>
                                     <CardActions>
@@ -63,11 +71,13 @@ function Shop() {
                                 </Card>
                             </Link>
                         </Grid>
-                    ))}
-                </Grid>
-            </Container>
-        </main>
+
+                    </Grid>
+                </Container>
+
+
+            </main>
+        )
+    }
     )
 }
-
-export default Shop;

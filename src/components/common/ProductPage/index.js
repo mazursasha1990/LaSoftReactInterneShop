@@ -1,30 +1,30 @@
-
-
 import React from 'react';
-
-import ProductsData from '../../../assets/productsData/products';
+import { useSelector } from 'react-redux';
+//import {Link} from 'react-router-dom';
 
 import './index.scss';
 
 
-const ProductPage = ({ match }) => {
-    const {
-        params: { id }
-    } = match;
+export const SinglePostPage = ({ match }) => {
+    const { postId } = match.params;
 
+    const post = useSelector((state) =>
+        state.posts.find((post) => `${post.id}` === postId)
+    )
+
+    if (!post) (<h2>Post not found</h2>)
 
     return (
         <div>
             <p>
-                <strong>Product ID: {id}</strong>
+                <strong>Product ID: {post.id}</strong>
             </p>
-            <img src={ProductsData[id - 1].url} alt={id} />
+            <img src={post.url} alt={post.id} />
             <p>
-                <strong>Product price: {ProductsData[id - 1].price} $</strong>
+                <strong>Product price: {post.price} $</strong>
             </p>
         </div>
     )
 }
 
 
-export default ProductPage;

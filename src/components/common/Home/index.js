@@ -5,13 +5,14 @@ import ImageList from '@material-ui/core/ImageList';
 import ImageListItem from '@material-ui/core/ImageListItem';
 import ImageListItemBar from '@material-ui/core/ImageListItemBar';
 import IconButton from '@material-ui/core/IconButton';
+import Button from '@material-ui/core/Button';
 import { Container, Typography, Paper, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import ProductsData from "../../../assets/productsData/products";
+//import ProductsData from "../../../assets/productsData/products";
 
 import { Link } from 'react-router-dom';
 
-import Button from '@material-ui/core/Button';
+import { useSelector } from 'react-redux';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -46,6 +47,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Home() {
     const classes = useStyles();
+    const posts = useSelector((state) => state.posts);
 
     return (
         <main className="mainHome">
@@ -84,8 +86,8 @@ function Home() {
             </div>
             <div className={classes.root}>
 
-                <ImageList className={classes.imageList} cols={5.5}>
-                    {ProductsData.map((item) => (
+                { /*   <ImageList className={classes.imageList} cols={5.5}>
+                    {posts.map((item) => (
 
                         <ImageListItem key={item.url}>
                             <img src={item.url} alt={item.id} />
@@ -106,7 +108,7 @@ function Home() {
                         </ImageListItem>
 
                     ))}
-                </ImageList>
+                </ImageList> */}
 
             </div>
         </main >

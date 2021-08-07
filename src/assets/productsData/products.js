@@ -1,6 +1,6 @@
+import { createSlice } from '@reduxjs/toolkit'
 
-
-const ProductsData = [
+const initialState = [
     {
         id: 1,
         url: 'https://picsum.photos/id/1/200/300',
@@ -104,4 +104,11 @@ const ProductsData = [
 
 ]
 
-export default ProductsData;
+const postSlice = createSlice({
+    name: 'posts',
+    initialState,
+})
+
+
+
+export default postSlice.reduser;
