@@ -10,11 +10,13 @@ import Contact from './components/common/Contact';
 import PageNotFound from './components/common/PageNotFound';
 import ProductPage from './components/common/ProductPage';
 
-import ProductsData from './assets/productsData/products'
+import { connect } from "react-redux";
+//import ProductsData from './assets/productsData/products'
 
 import './App.scss';
+//import { current } from '@reduxjs/toolkit';
 
-function App() {
+const App = ({ current }) => {
 
   return (
     <div className="App">
@@ -25,6 +27,7 @@ function App() {
         <Route path="/shop" component={Shop} />
         <Route path="/about" component={About} />
         <Route path="/contact" component={Contact} />
+
         <Route path="/product/:id" component={ProductPage} />
         <Route component={PageNotFound} />
       </Switch>
@@ -35,4 +38,11 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    current: state.currentItem,
+  };
+};
+console.log()
+
+export default connect(mapStateToProps)(App);

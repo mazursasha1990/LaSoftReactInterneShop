@@ -7,6 +7,7 @@ import About from "./About"
 import Contact from "./Contact";
 import ProductPage from "./ProductPage";
 import PageNotFound from "./PageNotFound";
+import AddTodo from "./AddTodo/AddTodo";
 
 export {
     Header,
@@ -18,4 +19,5 @@ export {
     Contact,
     ProductPage,
     PageNotFound,
+    AddTodo,
 }
