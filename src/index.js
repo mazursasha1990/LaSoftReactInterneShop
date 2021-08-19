@@ -5,11 +5,11 @@ import './index.scss';
 import App from './App';
 
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import rootReducer from './redux/reducers';
-import { composeWithDevTools } from "redux-devtools-extension";
+// import { createStore } from 'redux';
+// import { composeWithDevTools } from "redux-devtools-extension";
+import store from "./redux/store"
 
-const store = createStore(rootReducer, composeWithDevTools());
+// const store = createStore(rootReducer, composeWithDevTools());
 
 ReactDOM.render(
   <React.StrictMode>

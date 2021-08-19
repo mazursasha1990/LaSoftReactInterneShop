@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import todos from './todos';
-import addProductsList from './addProductsList'
-import LOAD_CURRENT_ITEM from './loadCurrentItem';
+import { productsReducer } from './productsReducer';
+// import { selectedProductsReducer } from './selectedProductReducer';
 
-export default combineReducers({
-    todos,
-    addProductsList,
-    LOAD_CURRENT_ITEM,
+const reducers = combineReducers({
+    allProducts: productsReducer,
+    // product: selectedProductsReducer,
 })
+
+export default reducers;

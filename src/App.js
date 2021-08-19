@@ -10,13 +10,13 @@ import Contact from './components/common/Contact';
 import PageNotFound from './components/common/PageNotFound';
 import ProductPage from './components/common/ProductPage';
 
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 //import ProductsData from './assets/productsData/products'
 
 import './App.scss';
 //import { current } from '@reduxjs/toolkit';
 
-const App = ({ current }) => {
+const App = () => {
 
   return (
     <div className="App">
@@ -38,11 +38,5 @@ const App = ({ current }) => {
   );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    current: state.currentItem,
-  };
-};
-console.log()
 
-export default connect(mapStateToProps)(App);
+export default App;
